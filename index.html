@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Premkumar Patil | Portfolio</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #000;
+      color: #f0f0f0;
+      scroll-behavior: smooth;
+    }
+
+    /* Loader */
+    #loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 9999;
+    }
+
+    .loader-logo {
+      width: 120px;
+      animation: pulse 1.5s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 10px #ff00ff);
+      }
+      50% {
+        transform: scale(1.1);
+        filter: drop-shadow(0 0 30px #00ffee);
+      }
+    }
+
+    .typing {
+      margin-top: 25px;
+      font-size: 28px;
+      font-weight: bold;
+      background: linear-gradient(90deg, #ff00ff, #00ffee, #ff00ff);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine 2s linear infinite, depthFloat 3s ease-in-out infinite;
+      text-shadow: 0 0 10px #00ffee55, 0 0 20px #ff00ff44;
+    }
+
+    @keyframes shine {
+      to {
+        background-position: 200% center;
+      }
+    }
+
+    @keyframes depthFloat {
+      0%, 100% {
+        transform: translateY(0px) scale(1);
+      }
+      50% {
+        transform: translateY(-5px) scale(1.05);
+      }
+    }
+
+    /* Hide main content initially */
+    #main-content {
+      display: none;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: #0d0d0d;
+      color: #f0f0f0;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    .section {
+      padding: 80px 10%;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: #00ffee;
+      margin-bottom: 20px;
+    }
+
+    header {
+      position: fixed;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 20px 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 999;
+      box-shadow: 0 0 20px #00ffee;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 0 0 10px #00ffee;
+    }
+
+    .logo span {
+      color: #00ffee;
+    }
+
+    .navbar a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .navbar a::after {
+      content: '';
+      height: 2px;
+      width: 0;
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      background: #00ffee;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover::after,
+    .navbar a.active::after {
+      width: 100%;
+    }
+
+    #home {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to bottom right, #000, #111);
+      text-align: center;
+      padding: 0 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .social-icons {
+      margin-top: 20px;
+    }
+
+    .social-icons a {
+      color: #00ffee;
+      font-size: 24px;
+      margin: 0 10px;
+      transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #ff00ff;
+      transform: scale(1.2);
+    }
+
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    @keyframes buttonPulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+    }
+
+    .hero-buttons {
+      margin-top: 30px;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      perspective: 1000px;
+    }
+
+    .hero-buttons .btn {
+      padding: 14px 36px;
+      border: none;
+      border-radius: 50px;
+      font-weight: bold;
+      font-size: 16px;
+      background: linear-gradient(45deg, #00ffee, #e528d28b, #00ffee);
+      background-size: 300% 300%;
+      color: #000;
+      box-shadow: 0 10px 25px rgba(0, 255, 255, 0.6);
+      animation: gradientBG 4s ease infinite, buttonPulse 2s ease-in-out infinite;
+      transform-style: preserve-3d;
+      transition: all 0.4s ease;
+      will-change: transform;
+    }
+
+    .hero-buttons .btn:hover {
+      transform: rotateX(12deg) rotateY(-8deg) scale(1.05);
+      box-shadow: 0 15px 30px rgba(255, 0, 255, 0.5);
+      color: #fff;
+    }
+
+    .about-content {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .about-image img {
+      width: 260px;
+      border-radius: 16px;
+    }
+
+    .about-text p {
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .edu-card {
+      background: #1a1a1a;
+      padding: 25px;
+      border-radius: 16px;
+      text-align: center;
+      transition: 0.3s;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    }
+
+    .edu-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+    }
+
+
+
+
+    .skills {
+      background: radial-gradient(ellipse at top, #111, #000);
+      padding: 80px 10% 60px;
+      text-align: center;
+      z-index: 1;
+      position: relative;
+    }
+
+    .skills .heading {
+      font-size: 2.7rem;
+      color: #00ffee;
+      text-shadow: 0 0 15px #00ffeeaa;
+      margin-bottom: 50px;
+      letter-spacing: 1px;
+    }
+
+    /* Sub-section headers */
+    .sub-heading {
+      font-size: 1.5rem;
+      margin: 40px auto 20px;
+      padding: 14px 26px;
+      background: rgba(0, 255, 255, 0.05);
+      border-left: 6px solid #00ffee;
+      border-radius: 10px;
+      color: #ff00ff;
+      text-shadow: 0 0 10px #ff00ff66;
+      cursor: pointer;
+      user-select: none;
+      position: relative;
+      width: fit-content;
+      box-shadow: 0 0 20px rgba(255, 0, 255, 0.1), inset 0 0 15px rgba(0, 255, 255, 0.2);
+      transition: all 0.4s ease;
+    }
+
+    .sub-heading:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px #ff00ff66, inset 0 0 10px #00ffee66;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .sub-heading::after {
+      content: '▼';
+      position: absolute;
+      right: -30px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #00ffee;
+      transition: transform 0.3s ease;
+    }
+
+    .sub-heading.active::after {
+      transform: translateY(-50%) rotate(180deg);
+    }
+
+    /* Skills container */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 25px;
+      margin-top: 10px;
+      padding: 0 10px;
+      transition: all 0.6s ease;
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+    }
+
+    /* Show on toggle */
+    .skill-category.open {
+      max-height: 2000px;
+      opacity: 1;
+    }
+
+    /* Skill card style */
+    .skill-item {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      padding: 30px 15px;
+      text-align: center;
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(0, 255, 255, 0.15);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+      transform-style: preserve-3d;
+      perspective: 1000px;
+      transition: transform 0.6s ease, box-shadow 0.4s ease, background 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .skill-item:hover {
+      transform: rotateY(10deg) scale(1.06);
+      box-shadow: 0 25px 40px rgba(255, 0, 255, 0.4);
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    /* Neon Icons */
+    .skill-item i {
+      font-size: 42px;
+      color: #00ffee;
+      margin-bottom: 12px;
+      text-shadow: 0 0 12px #00ffee88;
+      transition: transform 0.5s ease, color 0.4s ease;
+    }
+
+    .skill-item:hover i {
+      transform: rotateZ(15deg) scale(1.1);
+      color: #ff00ff;
+    }
+
+    /* Skill Name */
+    .skill-item h3 {
+      font-size: 1.1rem;
+      color: #ffffff;
+      text-shadow: 0 0 8px #00ffee44;
+      margin-top: 8px;
+    }
+
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+      padding: 0 10px;
+    }
+
+    .project-card {
+      background: linear-gradient(135deg, #111111, #1a1a1a);
+      border: 1px solid rgba(0, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 30px 25px;
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      color: #fff;
+      text-align: center;
+      transition: all 0.5s ease;
+      position: relative;
+      overflow: hidden;
+      transform-style: preserve-3d;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(from 180deg at 50% 50%, #00ffee33, #ff00ff22, #00ffee33);
+      animation: rotateGlow 5s linear infinite;
+      z-index: 0;
+      opacity: 0.3;
+    }
+
+    .project-card:hover {
+      transform: scale(1.05) rotateX(6deg) rotateY(-6deg);
+      box-shadow: 0 0 40px rgba(255, 0, 255, 0.3), 0 0 60px rgba(0, 255, 255, 0.2);
+    }
+
+    .project-card h3 {
+      font-size: 1.5rem;
+      color: #00ffee;
+      text-shadow: 0 0 10px #00ffeeaa;
+      margin-bottom: 15px;
+      z-index: 1;
+      position: relative;
+    }
+
+    .project-card p {
+      font-size: 1rem;
+      color: #ccc;
+      z-index: 1;
+      position: relative;
+      text-shadow: 0 0 5px #00ffee22;
+    }
+
+    .project-card i {
+      margin-top: 15px;
+      z-index: 1;
+      position: relative;
+      animation: floatIcon 2s ease-in-out infinite;
+    }
+
+    @keyframes rotateGlow {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes floatIcon {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-5px);
+      }
+    }
+
+
+    .cert-carousel {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .cert-slide {
+      width: 80%;
+      max-width: 600px;
+      overflow: hidden;
+      border-radius: 16px;
+      perspective: 1000px;
+      transform-style: preserve-3d;
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+    }
+
+    .cert-slide img {
+      width: 100%;
+      border-radius: 16px;
+      transform: rotateY(0deg);
+      transition: transform 0.6s ease-in-out;
+    }
+
+    .cert-btn {
+      background: #00ffee;
+      border: none;
+      color: #000;
+      font-size: 24px;
+      padding: 10px 20px;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 0 20px #00ffee88;
+      transition: 0.3s;
+    }
+
+    .cert-btn:hover {
+      background: #00ccff;
+      transform: scale(1.1);
+    }
+
+    #contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 600px;
+    }
+
+    #contact input,
+    #contact textarea {
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      background: #1a1a1a;
+      color: #fff;
+      box-shadow: 0 0 10px #00ffee44;
+    }
+
+    #contact button {
+      padding: 10px;
+      background: linear-gradient(45deg, #00ffee, #e528d28b, #00ffee);
+      background-size: 300% 300%;
+      border: none;
+      border-radius: 8px;
+      color: #000;
+      font-weight: bold;
+      animation: gradientBG 3s ease infinite, buttonPulse 2s ease-in-out infinite;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+      transition: 0.3s;
+    }
+
+    #contact button:hover {
+      transform: scale(1.08) rotate(1deg);
+    }
+
+    @media (max-width: 768px) {
+      .about-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .cert-carousel {
+        flex-direction: column;
+      }
+    }
+
+    .header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      padding: 20px 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 999;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 0 0 15px #00ffee;
+    }
+
+    .logo span {
+      color: #00ffee;
+    }
+
+    .navbar {
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar a {
+      position: relative;
+      font-size: 16px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      padding: 6px 10px;
+      transition: 0.3s;
+    }
+
+    .navbar a::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      width: 100%;
+      background: linear-gradient(90deg, #00ffee, #ff00ff, #00ffee);
+      background-size: 200% 200%;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .navbar a:hover::before,
+    .navbar a.active::before {
+      transform: scaleX(1);
+    }
+
+    #menu-icon {
+      font-size: 36px;
+      color: #00ffee;
+      cursor: pointer;
+      display: none;
+      z-index: 1001;
+    }
+
+    @media (max-width: 768px) {
+      #menu-icon {
+        display: block;
+      }
+
+      .navbar {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 100%;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.9);
+        padding: 20px 0;
+        gap: 15px;
+        transition: 0.4s ease;
+        border-top: 1px solid rgba(0, 255, 255, 0.2);
+      }
+
+      .navbar.active {
+        right: 0;
+      }
+
+      .navbar a {
+        font-size: 20px;
+        padding: 10px 0;
+      }
+    }
+
+    .resume-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 30px;
+      background: linear-gradient(45deg, #00ffee, #e528d28b, #00ffee);
+      background-size: 300% 300%;
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+      animation: gradientBG 3s ease infinite, buttonPulse 2s ease-in-out infinite;
+      transition: transform 0.3s ease;
+    }
+
+    .resume-btn:hover {
+      transform: scale(1.08) rotate(1deg);
+      color: #fff;
+      background: #00ffee;
+    }
+
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
+  </style>
+
+
+
+
+  </style>
+</head>
+
+<body>
+
+   <!-- Loader -->
+  <div id="loader">
+    <img src="images/loader-logo.gif" alt="Loading..." class="loader-logo">
+    <div class="typing">Loading...</div>
+  </div>
+  <!-- Add this at the beginning of <body> -->
+  <div id="particles-js"></div>
+
+  <header class="header">
+    <a href="#" class="logo">Prem<span>kumar</span></a>
+    <i class="bx bx-menu" id="menu-icon"></i>
+    <nav class="navbar" id="navbar">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+
+  <!-- Home -->
+  <section id="home" class="hero-section">
+    <div class="hero-content">
+      <h1><span class="name-gradient">Premkumar Patil</span></h1>
+      <p>Frontend Developer</p>
+
+      <div class="social-icons">
+        <a href="https://github.com/" target="_blank"><i class='bx bxl-github'></i></a>
+        <a href="https://linkedin.com/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+        <a href="mailto:youremail@gmail.com"><i class='bx bx-envelope'></i></a>
+      </div>
+
+      <div class="hero-buttons">
+        <a href="#contact" class="btn primary">Get in Touch</a>
+        <a href="#projects" class="btn outline">View Projects</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- About -->
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <div class="about-content">
+      <div class="about-image">
+        <img src="images/profile.png" alt="Premkumar" />
+      </div>
+      <div class="about-text">
+        <p>
+          Hi! मी Premkumar Patil आहे, सध्या B.Sc. Computer Science शिकतोय आणि Web Development शिकत आहे.
+          माझा HTML, CSS, JavaScript आणि React.js मध्ये अभ्यास सुरु आहे.
+          मला websites कशी तयार करतात, ते शिकायला खूप आवडतं.
+          मी छोट्या projects वर सराव करतो आणि रोज काहीतरी नवीन शिकण्याचा प्रयत्न करतो.
+          Currently, I’m learning and growing — one line of code at a time!
+        </p>
+
+        <a href="files/resume.pdf" target="_blank" class="resume-btn">👁️ View Resume</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Education -->
+  <section id="education" class="section">
+    <h2>Education</h2>
+    <div class="education-grid">
+      <div class="edu-card">
+        <h3>B.Sc. Computer Science</h3>
+        <span>
+          <pre>2024 – present</pre>
+        </span>
+        <pr>S.T. Co-op Educational Society Ltd., Science Sr. College,Shahada <br> (KBCNMU University Jalgav )</pr>
+        <pre>( CGPA : 6.94 )</pre>
+      </div>
+
+      <div class="edu-card">
+        <h3>HSC Science</h3>
+        <span>2021 – 2023</span>
+        <pre>Vasantrao Naik Madhyamik &Uchcha <br>Madhyamik Vidyalay,Shahada </pre>
+        <Pre>( Percentage : 64.00% )</Pre>
+      </div>
+      <div class="edu-card">
+        <h3>SSC </h3>
+        <span>2010 – 2020 </span>
+        <pre>Vaibhav Vidhyalay, Vaijali <br>Ta-Shahada Dist-Nandurbar</pre>
+        <pre>Percentage : 82.40%</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+
+  <section class="skills" id="skills">
+    <h2 class="heading">My <span>Skills</span></h2>
+
+    <h3 class="sub-heading" onclick="toggleSkills('frontend-skills')">Frontend Skills</h3>
+    <div class="skills-grid skill-category" id="frontend-skills">
+      <div class="skill-item"><i class='bx bxl-html5'></i>
+        <h3>HTML</h3>
+      </div>
+      <div class="skill-item"><i class='bx bxl-css3'></i>
+        <h3>CSS</h3>
+      </div>
+      <div class="skill-item"><i class='bx bxl-javascript'></i>
+        <h3>JavaScript</h3>
+      </div>
+      <div class="skill-item"><i class='bx bxl-react'></i>
+        <h3>React.js</h3>
+      </div>
+      <div class="skill-item"><i class='bx bx-desktop'></i>
+        <h3>Responsive Design</h3>
+      </div>
+    </div>
+
+    <h3 class="sub-heading" onclick="toggleSkills('programming-skills')">Programming</h3>
+    <div class="skills-grid skill-category" id="programming-skills">
+      <div class="skill-item"><i class='bx bxl-python'></i>
+        <h3>Python</h3>
+      </div>
+      <div class="skill-item"><i class='bx bxl-c-plus-plus'></i>
+        <h3>C Programming</h3>
+      </div>
+      <div class="skill-item"><i class='bx bx-bulb'></i>
+        <h3>Problem Solving</h3>
+      </div>
+    </div>
+
+    <h3 class="sub-heading" onclick="toggleSkills('tools-skills')">Tools & Softwares</h3>
+    <div class="skills-grid skill-category" id="tools-skills">
+      <div class="skill-item"><i class='bx bxl-github'></i>
+        <h3>GitHub</h3>
+      </div>
+      <div class="skill-item"><i class='bx bxl-visual-studio'></i>
+        <h3>VS Code</h3>
+      </div>
+      <div class="skill-item"><i class='bx bxl-figma'></i>
+        <h3>Figma</h3>
+      </div>
+      <div class="skill-item"><i class='bx bxs-bar-chart-square'></i>
+        <h3>MS Office</h3>
+      </div>
+    </div>
+
+    <h3 class="sub-heading" onclick="toggleSkills('soft-skills')">Soft Skills</h3>
+    <div class="skills-grid skill-category" id="soft-skills">
+      <div class="skill-item"><i class='bx bx-time-five'></i>
+        <h3>Time Management</h3>
+      </div>
+      <div class="skill-item"><i class='bx bx-group'></i>
+        <h3>Leadership</h3>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Certifications -->
+  <section id="certifications" class="section">
+    <h2>My Certifications</h2>
+    <div class="cert-carousel">
+      <button class="cert-btn" onclick="prevCert()">‹</button>
+      <div class="cert-slide">
+        <img id="cert-img" src="images/cert1.jpg" alt="Certificate">
+      </div>
+      <button class="cert-btn" onclick="nextCert()">›</button>
+    </div>
+  </section>
+
+  
+<!-- Projects -->
+<section id="projects" class="section">
+  <h2>Projects</h2>
+  <div class="project-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px;">
+
+    <div class="project-card" style="background: linear-gradient(145deg, #111111, #1b1b1b); border-radius: 20px; padding: 30px; box-shadow: 0 0 25px rgba(0,255,255,0.2); transition: all 0.4s ease; transform-style: preserve-3d;">
+      <h3 style="color: #00ffee; font-size: 1.4rem; margin-bottom: 10px;">🚧 Coming Soon...</h3>
+      <p style="color: #ccc;">Exciting project is on the way! Stay tuned for updates.</p>
+      <div style="margin-top:10px;">
+        <i class='bx bx-loader-circle bx-spin' style="font-size: 40px; color: #00ffee;"></i>
+      </div>
+    </div>
+
+    <div class="project-card" style="background: linear-gradient(145deg, #111111, #1b1b1b); border-radius: 20px; padding: 30px; box-shadow: 0 0 25px rgba(255,0,255,0.3); transition: all 0.4s ease; transform-style: preserve-3d;">
+      <h3 style="color: #ff00ff; font-size: 1.4rem; margin-bottom: 10px;">🔧 In Progress</h3>
+      <p style="color: #ccc;">Currently building something innovative and useful for the web.</p>
+      <div style="margin-top:10px;">
+        <i class='bx bx-code-curly' style="font-size: 40px; color: #ff00ff;"></i>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Contact -->
+  <section id="contact" class="section">
+    <h2>Contact Me</h2>
+    <form onsubmit="redirectToInstagram(); return false;">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- JavaScript -->
+  <script>
+    const certificates = ["images/cert1.jpg", "images/cert2.jpg", "images/cert3.jpg"];
+    let currentCert = 0;
+    function showCert(index) {
+      const img = document.getElementById("cert-img");
+      img.style.transform = "rotateY(180deg)";
+      setTimeout(() => {
+        img.src = certificates[index];
+        img.style.transform = "rotateY(0deg)";
+      }, 300);
+    }
+    function nextCert() {
+      currentCert = (currentCert + 1) % certificates.length;
+      showCert(currentCert);
+    }
+    function prevCert() {
+      currentCert = (currentCert - 1 + certificates.length) % certificates.length;
+      showCert(currentCert);
+    }
+    setInterval(nextCert, 4000);
+
+  // Show main content after 3 seconds
+    setTimeout(() => {
+      document.getElementById('loader').style.display = 'none';
+      document.getElementById('main-content').style.display = 'block';
+    }, 3000);
+  
+
+    const menuIcon = document.getElementById('menu-icon');
+    const navbar = document.getElementById('navbar');
+
+    menuIcon.onclick = () => {
+      menuIcon.classList.toggle('bx-x');
+      navbar.classList.toggle('active');
+    };
+
+    function redirectToInstagram() {
+      alert("You will be redirected to my Instagram DM. Please send your message there.");
+      window.open("https://www.instagram.com/premkumar_patil_05/", "_blank");
+    }
+
+    document.addEventListener("click", () => {
+      tapSound.currentTime = 0;
+      tapSound.play();
+    });
+
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 60 },
+        "size": { "value": 3 },
+        "color": { "value": "#00ffee" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5 },
+        "line_linked": {
+          "enable": true,
+          "distance": 120,
+          "color": "#00ffee",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": { "enable": true, "speed": 2 }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": { "enable": true, "mode": "repulse" },
+          "onclick": { "enable": true, "mode": "push" }
+        }
+      },
+      "retina_detect": true
+    });
+
+    function toggleSkills(id) {
+      const section = document.getElementById(id);
+      const heading = section.previousElementSibling;
+
+      section.classList.toggle("open");
+      heading.classList.toggle("active");
+    }
+
+
+    // Scroll animation using ScrollReveal
+    ScrollReveal({
+      reset: true,
+      distance: '50px',
+      duration: 1200,
+      delay: 300
+    });
+
+    ScrollReveal().reveal('.skills .sub-heading', { origin: 'left' });
+    ScrollReveal().reveal('.skills-grid', { origin: 'bottom', interval: 100 });
+  </script>
+  <audio id="tapSound" src="sounds/tap.mp3" preload="auto"></audio>
+</body>
+
+</html>
